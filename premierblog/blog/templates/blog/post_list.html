@@ -1,23 +1,18 @@
 <html>
     <head>
-        <title>Blog Emiy Djangogirls</title>
+        <title>Django Girls blog</title>
     </head>
-
     <body>
-	<h1>Première partie</h1>
-        <p>Hi there!</p>
-	<a href="http://djangogirls.org">link</a>
-	<em>texte sur lequel on a mis l'accent</em>
-        <p>It works!</p>
+        <div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
 
-	<h2>Deuxième partie</h2>
-	<ul><li>lalilalala</li><li>lalulalala</li></ul> 
-
+{% for post in posts %}
     <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>le blabla en latin</p>
-        </div>
-
+        <p>publié: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaks }}</p>
+    </div>
+{% endfor %}
     </body>
 </html>
